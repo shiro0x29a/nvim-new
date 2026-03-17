@@ -1,6 +1,6 @@
 require('avante').setup({
-  provider = 'ollama',
-  auto_suggestions_provider = 'ollama',
+  provider = 'gemini',
+  auto_suggestions_provider = 'gemini',
 
   providers = {
     -- ==================== FREE PROVIDERS ====================
