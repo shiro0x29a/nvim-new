@@ -1,6 +1,6 @@
 require('avante').setup({
-  provider = 'gemini',
-  auto_suggestions_provider = 'gemini',
+  provider = 'qwen',
+  auto_suggestions_provider = 'qwen',
 
   providers = {
     -- ==================== FREE PROVIDERS ====================
@@ -19,7 +19,8 @@ require('avante').setup({
 
     gemini = {
       endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
-      model = 'gemini-3-flash-preview',
+      -- model = 'gemini-3-flash-preview',
+      model = 'gemini-2.5-flash',
       timeout = 30000,
     },
 
@@ -30,9 +31,11 @@ require('avante').setup({
     },
 
     qwen = {
-      endpoint = 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+      endpoint = 'https://dashscope-us.aliyuncs.com/compatible-mode/v1',
+      -- endpoint = 'https://dashscope.aliyuncs.com/compatible-mode/v1',
       model = 'qwen3-coder-plus',
       timeout = 30000,
+      api_key_name = "sk-60485d012f914f8a877e25bc1bc156cd",
     },
 
     glm = {
@@ -138,6 +141,12 @@ require('avante').setup({
     submit = {
       normal = '<CR>',
       insert = '<C-s>',
+    },
+    sidebar = {
+      retry_user_request = 'r',
+      edit_user_request = 'e',
+      toggle_code_window = 'x',
+      close = { 'q' },
     },
   },
   hints = { enabled = true },
