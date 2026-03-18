@@ -18,8 +18,8 @@ require('avante').setup({
     },
 
     gemini = {
-      endpoint = 'https://generativelanguage.googleapis.com',
-      model = 'gemini-2.0-flash-exp',
+      endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
+      model = 'gemini-3-flash-preview',
       timeout = 30000,
     },
 
