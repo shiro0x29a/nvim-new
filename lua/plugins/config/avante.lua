@@ -1,6 +1,7 @@
 require('avante').setup({
   provider = 'qwen',
-  auto_suggestions_provider = 'qwen',
+  auto_suggestions_provider = nil,
+  -- auto_suggestions_provider = 'qwen',
 
   providers = {
     -- ==================== FREE PROVIDERS ====================
@@ -31,11 +32,10 @@ require('avante').setup({
     },
 
     qwen = {
-      endpoint = 'https://dashscope-us.aliyuncs.com/compatible-mode/v1',
-      -- endpoint = 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+      endpoint = 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1',
       model = 'qwen3-coder-plus',
       timeout = 30000,
-      api_key_name = "sk-60485d012f914f8a877e25bc1bc156cd",
+      api_key_name = "DASHSCOPE_API_KEY",
     },
 
     glm = {
