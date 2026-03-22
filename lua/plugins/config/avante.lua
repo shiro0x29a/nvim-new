@@ -1,7 +1,22 @@
 require('avante').setup({
-  provider = 'qwen',
+  provider = 'qwen-code',
   auto_suggestions_provider = nil,
   -- auto_suggestions_provider = 'qwen',
+  mode = 'agentic',
+
+  acp_providers = {
+    ["qwen-code"] = {
+      command = "qwen",
+      args = { "--acp" },  -- ACP режим если поддерживается
+      -- Альтернативно, если ACP не поддерживается, используйте pipe режим
+      -- args = { "--stdio" },
+      env = {
+        DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY"),
+        -- Для scoped ключа
+        -- AVANTE_DASHSCOPE_API_KEY = os.getenv("AVANTE_DASHSCOPE_API_KEY"),
+      },
+    },
+  },
 
   providers = {
     -- ==================== FREE PROVIDERS ====================
@@ -30,7 +45,7 @@ require('avante').setup({
       model = 'mistral-small-latest',
       timeout = 30000,
     },
-
+    
     qwen = {
       endpoint = 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1',
       model = 'qwen3-coder-plus',
@@ -115,6 +130,7 @@ require('avante').setup({
 
   behaviour = {
     auto_suggestions = false,
+    auto_apply = false,
     auto_set_highlight_group = true,
     auto_set_keymaps = true,
   },
