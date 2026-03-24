@@ -3,6 +3,7 @@ require('avante').setup({
   auto_suggestions_provider = nil,
   -- auto_suggestions_provider = 'qwen',
   mode = 'agentic',
+  instructions_file = ".avante.md",
 
   acp_providers = {
     ["qwen-code"] = {
@@ -137,7 +138,7 @@ require('avante').setup({
     minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
     enable_token_counting = true, -- Whether to enable token counting. Default to true.
     auto_add_current_file = true, -- Whether to automatically add the current file when opening a new chat. Default to true.
-    auto_approve_tool_permissions = {"bash"}, -- Auto-approve specific tools only
+    auto_approve_tool_permissions = {"bash", "ls"}, -- Auto-approve specific tools only
     -- auto_approve_tool_permissions = true, -- Default: auto-approve all tools (no prompts)
     -- Examples:
     -- auto_approve_tool_permissions = false,                -- Show permission prompts for all tools
@@ -148,12 +149,6 @@ require('avante').setup({
     ---@type boolean
     acp_follow_agent_locations = true,
   },
-  -- behaviour = {
-  --   auto_suggestions = false,
-  --   auto_apply = false,
-  --   auto_set_highlight_group = true,
-  --   auto_set_keymaps = true,
-  -- },
   prompt_logger = { -- logs prompts to disk (timestamped, for replay/debugging)
     enabled = true, -- toggle logging entirely
     log_dir = vim.fn.stdpath("cache") .. "/avante_prompts", -- directory where logs are saved
@@ -189,7 +184,7 @@ require('avante').setup({
       prev = "[[",
     },
     submit = {
-      normal = "<CR>",
+      normal = "<M-CR>",
       insert = "<C-s>",
     },
     cancel = {
@@ -266,54 +261,3 @@ require('avante').setup({
     throttle = 600,
   },
 })
---   mappings = {
---     diff = {
---       ours = 'co',
---       theirs = 'ct',
---       all_theirs = 'ca',
---       both = 'cb',
---       cursor = 'cc',
---       next = ']x',
---       prev = '[x',
---     },
---     suggestion = {
---       accept = '<M-l>',
---       next = '<M-]>',
---       prev = '<M-[>',
---       dismiss = '<C-]>',
---     },
---     jump = {
---       next = ']]',
---       prev = '[[',
---     },
---     submit = {
---       normal = '<CR>',
---       insert = '<C-s>',
---     },
---     sidebar = {
---       retry_user_request = 'r',
---       edit_user_request = 'e',
---       toggle_code_window = 'x',
---       close = { 'q' },
---     },
---   },
---   hints = { enabled = true },
---   windows = {
---     position = 'right',
---     wrap = true,
---     width = 40,
---     sidebar_header = {
---       align = 'center',
---       rounded = true,
---     },
---   },
---   highlights = {
---     diff = {
---       incoming = 'DiffAdd',
---       our = 'DiffChange',
---     },
---   },
---   diff = {
---     autojump = true,
---   },
--- })
