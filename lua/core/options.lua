@@ -45,7 +45,7 @@ local options = {
 }
 
 local globals = {
-  mapleader = ' ',
+  mapleader = ',',
   loaded = 1,
   loaded_netrwPlugin = 1,
 }

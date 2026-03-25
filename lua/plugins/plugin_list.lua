@@ -16,7 +16,9 @@ local plugin_list = {
 
   ['folke/which-key.nvim'] = {
     config = function()
-      require('which-key').setup()
+      require('which-key').setup({
+        timeout = 0,
+      })
     end
   },
 
