@@ -24,6 +24,12 @@ if status_ok then
     table.insert(plugins, plugin)
   end
 
+  -- Add AI plugins
+  local ai_plugins = require('plugins.config.ai')
+  for _, plugin in ipairs(ai_plugins) do
+    table.insert(plugins, plugin)
+  end
+
   lazy.setup(plugins, {
     install = {
       colorscheme = { 'catppuccin' },

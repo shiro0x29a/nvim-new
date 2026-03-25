@@ -1,5 +1,9 @@
 local M = {}
 
+function M.is_win()
+  return vim.uv.os_uname().sysname:find("Windows") ~= nil
+end
+
 M.initialize_lazy = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data') .. '/lazy/lazy.nvim'

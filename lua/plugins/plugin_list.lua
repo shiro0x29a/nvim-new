@@ -170,28 +170,6 @@ local plugin_list = {
       require('plugins.config.lsp')
     end
   },
-
-  ['zbirenbaum/copilot.lua'] = {
-    config = function()
-      require('copilot').setup()
-    end,
-  },
-
-  ['yetone/avante.nvim'] = {
-    event = 'VeryLazy',
-    lazy = true,
-    version = false,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'stevearc/dressing.nvim',
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      'zbirenbaum/copilot.lua',
-    },
-    config = function()
-      require('plugins.config.avante')
-    end,
-  },
 }
 
 return plugin_list
